@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博愛國小家長會線上簽到系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">博愛國小家長會</p>
+        <h1>線上簽到系統</h1>
+      </div>
+      <div class="top-actions">
+        <button id="exportBtn" type="button">匯出 CSV</button>
+        <button id="clearBtn" type="button" class="secondary">清空名單</button>
+      </div>
+    </header>
+
+    <section class="layout">
+      <aside class="panel setup-panel" aria-labelledby="setupTitle">
+        <h2 id="setupTitle">活動資料</h2>
+        <div class="form-grid">
+          <label>活動名稱
+            <input id="eventName" autocomplete="off" value="家長會會議簽到">
+          </label>
+          <label>日期
+            <input id="eventDate" type="date">
+          </label>
+          <label>地點
+            <input id="eventPlace" autocomplete="off" placeholder="例如：博愛國小會議室">
+          </label>
+          <label>預計人數
+            <input id="expectedCount" type="number" min="0" inputmode="numeric" placeholder="例如：35">
+          </label>
+        </div>
+
+        <div class="summary" aria-label="簽到統計">
+          <div>
+            <span id="checkedCount">0</span>
+            <small>已簽到</small>
+          </div>
+          <div>
+            <span id="lateCount">0</span>
+            <small>晚到</small>
+          </div>
+          <div>
+            <span id="rateText">0%</span>
+            <small>到場率</small>
+          </div>
+        </div>
+      </aside>
+
+      <section class="panel checkin-panel" aria-labelledby="checkinTitle">
+        <div class="section-head">
+          <div>
+            <h2 id="checkinTitle">現場簽到</h2>
+            <p>輸入姓名與身分後按下簽到，系統會自動記錄時間。</p>
+          </div>
+          <button id="sampleBtn" type="button" class="ghost">加入範例</button>
+        </div>
+
+        <form id="checkinForm" class="checkin-form">
+          <label>姓名
+            <input id="personName" required autocomplete="name" placeholder="請輸入姓名">
+          </label>
+          <label>身分
+            <select id="role">
+              <option>家長代表</option>
+              <option>家長委員</option>
+              <option>常務委員</option>
+              <option>校方代表</option>
+              <option>志工</option>
+              <option>來賓</option>
+            </select>
+          </label>
+          <label>班級 / 單位
+            <input id="groupName" autocomplete="organization" placeholder="例如：三年二班、總務處">
+          </label>
+          <label>聯絡電話
+            <input id="phone" inputmode="tel" autocomplete="tel" placeholder="可選填">
+          </label>
+          <div class="proxy-box wide">
+            <label class="checkbox-label">
+              <input id="isProxy" type="checkbox">
+              <span>代理出席</span>
+            </label>
+            <div id="proxyFields" class="proxy-fields" hidden>
+              <label>代理姓名
+                <input id="proxyName" autocomplete="name" placeholder="被代理人姓名">
+              </label>
+              <label>代理身分
+                <select id="proxyRole">
+                  <option>家長代表</option>
+                  <option>家長委員</option>
+                  <option>常務委員</option>
+                  <option>校方代表</option>
+                  <option>志工</option>
+                  <option>來賓</option>
+                </select>
+              </label>
+              <label>代理班級 / 單位
+                <input id="proxyGroupName" autocomplete="organization" placeholder="例如：三年二班、總務處">
+              </label>
+            </div>
+          </div>
+          <label class="wide">備註
+            <input id="note" autocomplete="off" placeholder="例如：晚到、需收據">
+          </label>
+          <button type="submit" class="primary-action">簽到</button>
+        </form>
+      </section>
+    </section>
+
+    <section class="panel roster-panel" aria-labelledby="rosterTitle">
+      <div class="section-head roster-head">
+        <div>
+          <h2 id="rosterTitle">簽到名冊</h2>
+          <p id="eventLine">尚未設定活動資訊</p>
+        </div>
+        <label class="search-label">搜尋
+          <input id="searchInput" autocomplete="off" placeholder="姓名、身分、班級、電話">
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>時間</th>
+              <th>姓名</th>
+              <th>身分</th>
+              <th>班級 / 單位</th>
+              <th>電話</th>
+              <th>代理出席</th>
+              <th>備註</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="attendeeRows"></tbody>
+        </table>
+      </div>
+      <p id="emptyState" class="empty">還沒有簽到資料。現場可以從上方表單開始登記。</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
