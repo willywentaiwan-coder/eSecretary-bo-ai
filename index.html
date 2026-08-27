@@ -3,148 +3,467 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>博愛國小家長會線上簽到系統</title>
+  <title>臺北市信義區博愛國小家長會｜公開透明會務平台</title>
+  <meta name="description" content="臺北市信義區博愛國小家長會公開透明會務平台，整理會務運作、經費用途、會議紀錄、年度活動與家長提案方式。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
-    <header class="topbar">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="回到首頁">
+      <span class="brand-mark">愛</span>
+      <span>
+        <strong>臺北市博愛國小家長會</strong>
+        <small>公開透明會務平台</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav">選單</button>
+    <nav id="siteNav" class="site-nav" aria-label="主要導覽">
+      <a href="#overview">家長總覽</a>
+      <a href="#dashboard">公開資料</a>
+      <a href="#finance">經費公開</a>
+      <a href="#records">會議紀錄</a>
+      <a href="#photos">活動照片</a>
+      <a href="#participate">我要參與</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <img src="assets/boai-pta-hero.png" alt="家長、老師與校方在校園中討論會務與預算的示意圖">
+      <div class="hero-overlay">
+        <p class="kicker">讓每一筆支持，都看得見去向</p>
+        <h1 id="heroTitle">臺北市博愛國小家長會，讓每位家長都看得懂、找得到、問得到。</h1>
+        <p class="hero-copy">用現代家長需要的方式整理會務：快速查本月重點、會議決議、經費用途、活動照片與提案信箱。</p>
+        <div class="hero-actions" aria-label="快速前往">
+          <a class="button primary" href="#overview">看家長總覽</a>
+          <a class="button secondary" href="#participate">提出建議</a>
+        </div>
+      </div>
+      <p class="image-note">主視覺為 AI 生成示意圖，非真實校園照片。</p>
+    </section>
+
+    <section class="status-strip" aria-label="公開資訊摘要">
+      <article>
+        <span>目前最該公開</span>
+        <strong>本月待辦、會議決議、經費月報</strong>
+      </article>
+      <article>
+        <span>家長最常查</span>
+        <strong>錢怎麼用、事情誰決定</strong>
+      </article>
+      <article>
+        <span>提案管道</span>
+        <strong>直接寄到 boaipta@gmail.com</strong>
+      </article>
+    </section>
+
+    <section class="tab-shell" aria-label="頁面標籤">
+      <div class="tab-list" role="tablist" aria-label="家長會資訊分類">
+        <button class="page-tab active" type="button" role="tab" aria-selected="true" data-tab="overview">家長總覽</button>
+        <button class="page-tab" type="button" role="tab" aria-selected="false" data-tab="dashboard">公開資料</button>
+        <button class="page-tab" type="button" role="tab" aria-selected="false" data-tab="finance">經費</button>
+        <button class="page-tab" type="button" role="tab" aria-selected="false" data-tab="records">會議</button>
+        <button class="page-tab" type="button" role="tab" aria-selected="false" data-tab="photos">活動照片</button>
+        <button class="page-tab" type="button" role="tab" aria-selected="false" data-tab="participate">提案聯絡</button>
+      </div>
+    </section>
+
+    <section id="overview" class="section audit-section" aria-labelledby="auditTitle" data-tab-panel="overview">
+      <div class="section-head">
+        <p class="section-label">家長總覽</p>
+        <h2 id="auditTitle">先回答家長最在意的事，再提供細節。</h2>
+      </div>
+      <div class="audit-grid">
+        <article>
+          <h3>不要只貼活動照片</h3>
+          <p>每場活動要補上目的、分工、支出、結餘與檢討，不然家長只看到熱鬧，看不到運作。</p>
+        </article>
+        <article>
+          <h3>不要只說感謝支持</h3>
+          <p>誰支持、支持什麼、用在哪裡、是否完成，都應該能被查到。</p>
+        </article>
+        <article>
+          <h3>不要只公布總金額</h3>
+          <p>經費至少要分成收入、支出、指定用途、憑證狀態與結餘，家長才看得懂。</p>
+        </article>
+        <article>
+          <h3>不要讓提案消失</h3>
+          <p>提案要有收到、處理中、已回覆、暫不公開的狀態，並定期公布件數摘要。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="parent-questions" class="section parent-section" data-tab-panel="overview">
+      <div class="section-head">
+        <p class="section-label">一般家長最常問</p>
+        <h2>不需要先懂組織章程，先把最關心的問題講清楚。</h2>
+      </div>
+      <div class="question-grid">
+        <article>
+          <span>Q1</span>
+          <h3>我的會費或捐款花到哪裡？</h3>
+          <p>看「經費公開」：收入來源、支出用途、活動結餘與年度決算，應用同一套格式公開。</p>
+          <a href="#finance">查經費</a>
+        </article>
+        <article>
+          <span>Q2</span>
+          <h3>家長會最近決定了什麼？</h3>
+          <p>看「會議紀錄」：每件事都要有決議、負責窗口、下次更新時間與完成狀態。</p>
+          <a href="#records">查決議</a>
+        </article>
+        <article>
+          <span>Q3</span>
+          <h3>我反映問題後會有人回嗎？</h3>
+          <p>看「我要參與」：提案會以收到、處理中、已回覆、無法公開四種狀態彙整。</p>
+          <a href="#participate">提案回覆</a>
+        </article>
+        <article>
+          <span>Q4</span>
+          <h3>活動到底需要家長做什麼？</h3>
+          <p>看「年度活動紀錄」：每場活動列出目的、分工、經費、成果，讓幫忙更有方向。</p>
+          <a href="#history">看活動</a>
+        </article>
+        <article>
+          <span>Q5</span>
+          <h3>誰可以代表家長說話？</h3>
+          <p>看「會務怎麼運作」：班級代表如何收意見、委員如何討論、校方窗口如何協作。</p>
+          <a href="#about">看流程</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard-section" data-tab-panel="dashboard">
+      <div class="section-head">
+        <p class="section-label">公開資料中心</p>
+        <h2>把所有資料整理成「家長可查、可問、可追蹤」的固定欄位。</h2>
+      </div>
+      <div class="dashboard-grid">
+        <article>
+          <span class="dash-number">01</span>
+          <h3>每月會務摘要</h3>
+          <p>本月討論事項、完成事項、待處理問題與下個月重點。</p>
+        </article>
+        <article>
+          <span class="dash-number">02</span>
+          <h3>會議紀錄清單</h3>
+          <p>會議日期、出席角色、決議內容、負責人與預計完成日。</p>
+        </article>
+        <article>
+          <span class="dash-number">03</span>
+          <h3>經費收支月報</h3>
+          <p>收入、支出、指定用途、憑證狀態、結餘與年度累計。</p>
+        </article>
+        <article>
+          <span class="dash-number">04</span>
+          <h3>活動成果紀錄</h3>
+          <p>活動目的、志工分工、預算使用、照片成果與檢討事項。</p>
+        </article>
+      </div>
+      <div class="update-matrix" aria-label="公開資料更新表">
+        <div class="matrix-row matrix-head">
+          <span>家長想查</span>
+          <span>頁面應提供</span>
+          <span>誰更新</span>
+          <span>多久更新</span>
+        </div>
+        <div class="matrix-row">
+          <span>最近在做什麼</span>
+          <span>會務摘要、待辦清單、完成狀態</span>
+          <span>秘書組</span>
+          <span>每月第一週</span>
+        </div>
+        <div class="matrix-row">
+          <span>事情怎麼決定</span>
+          <span>會議紀錄、決議、負責人</span>
+          <span>會務組</span>
+          <span>會後 7 日內</span>
+        </div>
+        <div class="matrix-row">
+          <span>錢怎麼用</span>
+          <span>收支月報、活動結算、年度決算</span>
+          <span>財務組</span>
+          <span>每月或活動後</span>
+        </div>
+        <div class="matrix-row">
+          <span>提案有沒有回</span>
+          <span>件數統計、處理狀態、回覆摘要</span>
+          <span>家長會窗口</span>
+          <span>每月彙整</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section two-column" data-tab-panel="dashboard">
       <div>
-        <p class="eyebrow">博愛國小家長會</p>
-        <h1>線上簽到系統</h1>
+        <p class="section-label">會務怎麼運作</p>
+        <h2>用家長看得懂的方式，公開家長會的角色。</h2>
+        <p>家長會的核心任務，是協助親師溝通、支持學生學習與校園活動、彙整家長意見，並在合理制度下運用家長會經費。透明不只是公布文件，而是讓家長知道流程與責任。</p>
       </div>
-      <div class="top-actions">
-        <button id="exportBtn" type="button">匯出 CSV</button>
-        <button id="clearBtn" type="button" class="secondary">清空名單</button>
+      <div class="process-list">
+        <article>
+          <span>1</span>
+          <div>
+            <h3>班級家長代表收集意見</h3>
+            <p>班級問題、活動需求、校園安全與學習支援，先由班級代表彙整。</p>
+          </div>
+        </article>
+        <article>
+          <span>2</span>
+          <div>
+            <h3>委員會討論與分工</h3>
+            <p>會長、副會長、委員與校方窗口確認優先順序、預算與執行方式。</p>
+          </div>
+        </article>
+        <article>
+          <span>3</span>
+          <div>
+            <h3>會議決議與紀錄公開</h3>
+            <p>會議後整理決議、負責人、完成時間與後續追蹤狀態。</p>
+          </div>
+        </article>
+        <article>
+          <span>4</span>
+          <div>
+            <h3>成果回報與經費揭露</h3>
+            <p>活動結束後公布支出用途、捐款或贊助使用情形與照片成果。</p>
+          </div>
+        </article>
       </div>
-    </header>
-
-    <section class="layout">
-      <aside class="panel setup-panel" aria-labelledby="setupTitle">
-        <h2 id="setupTitle">活動資料</h2>
-        <div class="form-grid">
-          <label>活動名稱
-            <input id="eventName" autocomplete="off" value="家長會會議簽到">
-          </label>
-          <label>日期
-            <input id="eventDate" type="date">
-          </label>
-          <label>地點
-            <input id="eventPlace" autocomplete="off" placeholder="例如：博愛國小會議室">
-          </label>
-          <label>預計人數
-            <input id="expectedCount" type="number" min="0" inputmode="numeric" placeholder="例如：35">
-          </label>
-        </div>
-
-        <div class="summary" aria-label="簽到統計">
-          <div>
-            <span id="checkedCount">0</span>
-            <small>已簽到</small>
-          </div>
-          <div>
-            <span id="lateCount">0</span>
-            <small>晚到</small>
-          </div>
-          <div>
-            <span id="rateText">0%</span>
-            <small>到場率</small>
-          </div>
-        </div>
-      </aside>
-
-      <section class="panel checkin-panel" aria-labelledby="checkinTitle">
-        <div class="section-head">
-          <div>
-            <h2 id="checkinTitle">現場簽到</h2>
-            <p>輸入姓名與身分後按下簽到，系統會自動記錄時間。</p>
-          </div>
-          <button id="sampleBtn" type="button" class="ghost">加入範例</button>
-        </div>
-
-        <form id="checkinForm" class="checkin-form">
-          <label>姓名
-            <input id="personName" required autocomplete="name" placeholder="請輸入姓名">
-          </label>
-          <label>身分
-            <select id="role">
-              <option>家長代表</option>
-              <option>家長委員</option>
-              <option>常務委員</option>
-              <option>校方代表</option>
-              <option>志工</option>
-              <option>來賓</option>
-            </select>
-          </label>
-          <label>班級 / 單位
-            <input id="groupName" autocomplete="organization" placeholder="例如：三年二班、總務處">
-          </label>
-          <label>聯絡電話
-            <input id="phone" inputmode="tel" autocomplete="tel" placeholder="可選填">
-          </label>
-          <div class="proxy-box wide">
-            <label class="checkbox-label">
-              <input id="isProxy" type="checkbox">
-              <span>代理出席</span>
-            </label>
-            <div id="proxyFields" class="proxy-fields" hidden>
-              <label>代理姓名
-                <input id="proxyName" autocomplete="name" placeholder="被代理人姓名">
-              </label>
-              <label>代理身分
-                <select id="proxyRole">
-                  <option>家長代表</option>
-                  <option>家長委員</option>
-                  <option>常務委員</option>
-                  <option>校方代表</option>
-                  <option>志工</option>
-                  <option>來賓</option>
-                </select>
-              </label>
-              <label>代理班級 / 單位
-                <input id="proxyGroupName" autocomplete="organization" placeholder="例如：三年二班、總務處">
-              </label>
-            </div>
-          </div>
-          <label class="wide">備註
-            <input id="note" autocomplete="off" placeholder="例如：晚到、需收據">
-          </label>
-          <button type="submit" class="primary-action">簽到</button>
-        </form>
-      </section>
     </section>
 
-    <section class="panel roster-panel" aria-labelledby="rosterTitle">
-      <div class="section-head roster-head">
-        <div>
-          <h2 id="rosterTitle">簽到名冊</h2>
-          <p id="eventLine">尚未設定活動資訊</p>
+    <section class="section governance" aria-labelledby="governanceTitle" data-tab-panel="dashboard">
+      <div class="section-head">
+        <p class="section-label">組織與職責</p>
+        <h2 id="governanceTitle">每個角色都有可被詢問、可被追蹤的責任。</h2>
+      </div>
+      <div class="role-grid">
+        <article>
+          <h3>會長與副會長</h3>
+          <p>召集會議、協調校方與委員、代表家長會對外溝通，並確認決議有被追蹤。</p>
+        </article>
+        <article>
+          <h3>家長委員</h3>
+          <p>參與議案討論、協助活動推動、檢視經費用途，將班級或社群意見帶入會務。</p>
+        </article>
+        <article>
+          <h3>財務與監督</h3>
+          <p>整理收入、支出、憑證與預決算資料，定期公告摘要，重大支出需列明用途。</p>
+        </article>
+        <article>
+          <h3>校方窗口</h3>
+          <p>提供校務需求、法規與行政協助，確保家長會支援符合學生安全與學校規範。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="finance" class="section finance-section" data-tab-panel="finance">
+      <div class="section-head">
+        <p class="section-label">經費公開</p>
+        <h2>家長最在意的錢，應該用同一套格式說清楚。</h2>
+      </div>
+      <div class="finance-layout">
+        <div class="ledger">
+          <div class="ledger-row ledger-head">
+            <span>項目</span>
+            <span>公開內容</span>
+            <span>更新頻率</span>
+          </div>
+          <div class="ledger-row">
+            <span>會費與捐款</span>
+            <span>日期、來源類別、金額、指定用途</span>
+            <span>每月</span>
+          </div>
+          <div class="ledger-row">
+            <span>活動支出</span>
+            <span>活動名稱、支出科目、憑證狀態、結餘</span>
+            <span>活動後</span>
+          </div>
+          <div class="ledger-row">
+            <span>校務支援</span>
+            <span>申請單位、用途、受益對象、核准紀錄</span>
+            <span>核定後</span>
+          </div>
+          <div class="ledger-row">
+            <span>年度決算</span>
+            <span>收入總表、支出總表、剩餘款處理</span>
+            <span>每學年</span>
+          </div>
         </div>
-        <label class="search-label">搜尋
-          <input id="searchInput" autocomplete="off" placeholder="姓名、身分、班級、電話">
+        <aside class="notice-box">
+          <h3>建議公開原則</h3>
+          <p>個人捐款可保留姓名遮蔽或只列類別；但金額、用途、收據與決議依據應可被查核。涉及學生個資或家庭狀況的補助，應只公開彙整數字。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="records" class="section records-section" data-tab-panel="records">
+      <div class="section-head">
+        <p class="section-label">會議紀錄</p>
+        <h2>每次會議都留下「決議、負責人、進度」。</h2>
+      </div>
+      <div class="toolbar" role="group" aria-label="篩選會議紀錄">
+        <button class="filter-button active" type="button" data-filter="all">全部</button>
+        <button class="filter-button" type="button" data-filter="open">進行中</button>
+        <button class="filter-button" type="button" data-filter="done">已完成</button>
+      </div>
+      <div class="record-list">
+        <article class="record-card" data-status="open">
+          <div>
+            <span class="tag">進行中</span>
+            <h3>家長提案回覆機制</h3>
+          </div>
+          <p>建立線上表單與月度回覆摘要，讓一般家長能知道意見是否被收到、由誰處理。</p>
+          <dl>
+            <div><dt>負責</dt><dd>家長會秘書組</dd></div>
+            <div><dt>下次更新</dt><dd>每月第一週</dd></div>
+          </dl>
+        </article>
+        <article class="record-card" data-status="open">
+          <div>
+            <span class="tag">進行中</span>
+            <h3>活動志工資料庫</h3>
+          </div>
+          <p>整理家長可支援的時段與專長，協助園遊會、畢業典禮、校園安全宣導等活動。</p>
+          <dl>
+            <div><dt>負責</dt><dd>活動組</dd></div>
+            <div><dt>下次更新</dt><dd>活動前四週</dd></div>
+          </dl>
+        </article>
+        <article class="record-card" data-status="done">
+          <div>
+            <span class="tag done">已完成</span>
+            <h3>年度家長大會資料整理</h3>
+          </div>
+          <p>彙整家長大會議程、會務報告、財務摘要與常見問答，供未出席家長補看。</p>
+          <dl>
+            <div><dt>負責</dt><dd>會務組</dd></div>
+            <div><dt>狀態</dt><dd>可公告</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="photos" class="section history-section" data-tab-panel="photos">
+      <div class="section-head">
+        <p class="section-label">活動照片與紀錄</p>
+        <h2>照片要能回到「活動目的、支援內容、成果與來源」。</h2>
+        <p>以下整理目前網路可查到的臺北市信義區博愛國小家長會活動脈絡。因部分照片來自社群或舊站，授權不明者以原始相簿連結呈現，不直接複製照片檔。</p>
+      </div>
+      <div class="photo-wall" aria-label="活動相簿連結">
+        <article class="photo-card feature-photo">
+          <div class="photo-art" aria-hidden="true"></div>
+          <div>
+            <time>2026 / 04</time>
+            <h3>兒童節活動</h3>
+            <p>公開貼文提到套圈圈、射飛鏢、投籃機、電影院、跳跳床，以及棉花糖、雞蛋糕、爆米花等親子活動。</p>
+            <a href="https://www.schoolandcollegelistings.com/TW/Taipei/1140392756016331/%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E5%8D%9A%E6%84%9B%E5%9C%8B%E5%B0%8F%E5%AD%B8%E7%94%9F%E5%AE%B6%E9%95%B7%E6%9C%83" target="_blank" rel="noreferrer">查看原始相簿</a>
+          </div>
+        </article>
+        <article class="photo-card">
+          <div class="photo-art photo-art-meeting" aria-hidden="true"></div>
+          <div>
+            <time>2026 / 03</time>
+            <h3>114 學年度第二次會員大會</h3>
+            <p>公開貼文提到家長代表出席、了解學校事務、修改規章與啟動募款。</p>
+            <a href="https://www.schoolandcollegelistings.com/TW/Taipei/1140392756016331/%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E5%8D%9A%E6%84%9B%E5%9C%8B%E5%B0%8F%E5%AD%B8%E7%94%9F%E5%AE%B6%E9%95%B7%E6%9C%83" target="_blank" rel="noreferrer">查看原始相簿</a>
+          </div>
+        </article>
+        <article class="photo-card">
+          <div class="photo-art photo-art-stage" aria-hidden="true"></div>
+          <div>
+            <time>2026 / 05</time>
+            <h3>兒童新樂園小明星大舞台</h3>
+            <p>公開報名頁列主辦單位為新生／博愛國小家長會，鼓勵孩子在樹蛙表演場展現創意。</p>
+            <a href="https://www.beclass.com/rid%3D30525d769b12702ed695" target="_blank" rel="noreferrer">查看活動頁</a>
+          </div>
+        </article>
+        <article class="photo-card">
+          <div class="photo-art photo-art-archive" aria-hidden="true"></div>
+          <div>
+            <time>舊站資料</time>
+            <h3>會議照片、活動照片、紀念光碟</h3>
+            <p>舊站保留活動照片、會議照片、影音資料、101 至 103 學年度紀念光碟等分類。</p>
+            <a href="https://tw.class.uschoolnet.com/class/?cl=1258073338-6485-2143&csid=css000000111141&id=model1" target="_blank" rel="noreferrer">查看舊站分類</a>
+          </div>
+        </article>
+      </div>
+      <div class="timeline">
+        <article>
+          <time>學年開始</time>
+          <h3>家長大會</h3>
+          <p>公開年度會務方向、組織分工、預算規劃與家長提案處理方式。</p>
+        </article>
+        <article>
+          <time>上學期</time>
+          <h3>跳蚤市場暨感恩園遊會</h3>
+          <p>整理志工分工、攤位支援、活動收入支出、結餘用途與感謝名單。</p>
+        </article>
+        <article>
+          <time>下學期</time>
+          <h3>畢業典禮與校園活動支援</h3>
+          <p>記錄場地協助、禮品採購、志工人力、經費來源與活動照片。</p>
+        </article>
+        <article>
+          <time>全年</time>
+          <h3>捐資興學與家長會經費</h3>
+          <p>以月報方式整理收入、指定用途、支出科目、憑證狀態與結餘。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="participate" class="section participate-section" data-tab-panel="participate">
+      <div>
+        <p class="section-label">我要參與</p>
+        <h2>有問題、想法或願意幫忙，都應該有清楚入口。</h2>
+        <p>提案會先透過家長自己的信箱寄出，家長會收到後再依內容分流處理。涉及個資、學生個案或家庭狀況時，不應公開全文，只公開彙整狀態。</p>
+        <div class="response-policy" aria-label="提案處理流程">
+          <article>
+            <span>1</span>
+            <strong>家長寄出</strong>
+            <p>寄到 boaipta@gmail.com，寄件備份會留在家長自己的信箱。</p>
+          </article>
+          <article>
+            <span>2</span>
+            <strong>窗口收件</strong>
+            <p>依校園安全、經費、活動、親師溝通等類型分流。</p>
+          </article>
+          <article>
+            <span>3</span>
+            <strong>月度彙整</strong>
+            <p>公開件數與處理狀態，個資與個案內容不公開。</p>
+          </article>
+        </div>
+      </div>
+      <form id="suggestionForm" class="suggestion-form" aria-label="家長提案表單">
+        <label>
+          我想提出
+          <select id="suggestionType" name="suggestionType">
+            <option>校園安全或動線</option>
+            <option>活動與志工支援</option>
+            <option>經費用途建議</option>
+            <option>親師溝通</option>
+            <option>其他</option>
+          </select>
         </label>
-      </div>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>時間</th>
-              <th>姓名</th>
-              <th>身分</th>
-              <th>班級 / 單位</th>
-              <th>電話</th>
-              <th>代理出席</th>
-              <th>備註</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody id="attendeeRows"></tbody>
-        </table>
-      </div>
-      <p id="emptyState" class="empty">還沒有簽到資料。現場可以從上方表單開始登記。</p>
+        <label>
+          提案內容
+          <textarea id="suggestionContent" name="suggestionContent" rows="5" required placeholder="請簡要描述希望家長會協助了解或追蹤的事項"></textarea>
+        </label>
+        <label>
+          聯絡方式
+          <input id="suggestionContact" name="suggestionContact" type="text" placeholder="Email、電話或 Line ID">
+        </label>
+        <button type="submit">用我的信箱寄出</button>
+        <p class="form-note">按下後會開啟你的 Email App，收件人為 boaipta@gmail.com；請確認內容後再寄出。</p>
+      </form>
     </section>
+
   </main>
+
+  <footer class="site-footer">
+    <p>臺北市信義區博愛國小家長會公開透明會務平台</p>
+    <p>建議由家長會每月更新一次，並保留歷年版本供家長查閱。</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
