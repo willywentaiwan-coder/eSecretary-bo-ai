@@ -299,7 +299,7 @@ textarea {
 
 .tab-list {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 6px;
   padding: 8px;
   border: 1px solid rgba(217, 227, 220, 0.86);
@@ -340,7 +340,8 @@ textarea {
 }
 
 .tabs-enabled .finance-section.active-panel,
-.tabs-enabled .dashboard-section.active-panel {
+.tabs-enabled .dashboard-section.active-panel,
+.tabs-enabled .regulations-section.active-panel {
   display: block;
 }
 
@@ -410,8 +411,10 @@ textarea {
 
 .audit-section,
 .parent-section,
+.structure-section,
 .governance,
-.records-section {
+.records-section,
+.interaction-section {
   border-top: 1px solid var(--line);
 }
 
@@ -429,7 +432,10 @@ textarea {
 
 .question-grid,
 .dashboard-grid,
-.audit-grid {
+.audit-grid,
+.structure-map,
+.legal-summary,
+.principle-grid {
   display: grid;
   gap: 14px;
 }
@@ -447,9 +453,25 @@ textarea {
   margin-bottom: 18px;
 }
 
+.structure-map {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.legal-summary {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 22px;
+}
+
+.principle-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .question-grid article,
 .dashboard-grid article,
-.audit-grid article {
+.audit-grid article,
+.structure-map article,
+.legal-summary article,
+.principle-grid article {
   display: grid;
   align-content: start;
   gap: 12px;
@@ -466,7 +488,10 @@ textarea {
 }
 
 .question-grid span,
-.dash-number {
+.dash-number,
+.structure-map span,
+.legal-summary span,
+.principle-grid span {
   display: inline-flex;
   width: fit-content;
   border-radius: 999px;
@@ -475,6 +500,18 @@ textarea {
   background: var(--soft-green);
   font-size: 13px;
   font-weight: 900;
+}
+
+.structure-map article {
+  border-top: 5px solid var(--teal);
+}
+
+.legal-summary article {
+  border-top: 5px solid var(--blue);
+}
+
+.principle-grid article {
+  border-top: 5px solid var(--green);
 }
 
 .question-grid a,
@@ -510,6 +547,78 @@ textarea {
   background:
     linear-gradient(135deg, rgba(231, 242, 236, 0.92), rgba(255, 250, 240, 0.82)),
     #f8faf6;
+}
+
+.regulations-section {
+  width: 100%;
+  padding-right: max(18px, calc((100% - 1180px) / 2));
+  padding-left: max(18px, calc((100% - 1180px) / 2));
+  background:
+    linear-gradient(135deg, rgba(49, 92, 138, 0.1), rgba(255, 250, 240, 0.92)),
+    #fffdf7;
+}
+
+.bylaw-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 18px;
+  align-items: start;
+}
+
+.bylaw-layout h3 {
+  margin-bottom: 14px;
+}
+
+.bylaw-list {
+  display: grid;
+  gap: 10px;
+}
+
+.bylaw-list article {
+  display: grid;
+  gap: 5px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.bylaw-list strong {
+  color: var(--green-dark);
+}
+
+.bylaw-list p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.law-source-box {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.law-source-box a {
+  color: var(--teal);
+  font-weight: 900;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.law-source-box a:hover {
+  text-decoration: underline;
+}
+
+.law-source-box p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .update-matrix {
@@ -931,6 +1040,9 @@ textarea:focus {
   .audit-grid,
   .question-grid,
   .dashboard-grid,
+  .structure-map,
+  .legal-summary,
+  .principle-grid,
   .role-grid,
   .record-list,
   .timeline {
@@ -939,6 +1051,7 @@ textarea:focus {
 
   .two-column,
   .finance-layout,
+  .bylaw-layout,
   .participate-section {
     grid-template-columns: 1fr;
   }
@@ -998,6 +1111,9 @@ textarea:focus {
   .audit-grid,
   .question-grid,
   .dashboard-grid,
+  .structure-map,
+  .legal-summary,
+  .principle-grid,
   .role-grid,
   .record-list,
   .timeline {

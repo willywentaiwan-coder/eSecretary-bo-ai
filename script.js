@@ -33,6 +33,7 @@ function tabFromHash() {
   if (directPanel) return directPanel;
   if (hash === "history") return "photos";
   if (hash === "parent-questions") return "overview";
+  if (hash === "about") return "dashboard";
   return hash || "overview";
 }
 
