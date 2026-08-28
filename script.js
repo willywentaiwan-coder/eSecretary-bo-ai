@@ -8,6 +8,7 @@ const suggestionForm = document.getElementById("suggestionForm");
 const suggestionType = document.getElementById("suggestionType");
 const suggestionContent = document.getElementById("suggestionContent");
 const suggestionContact = document.getElementById("suggestionContact");
+const volunteerForm = document.getElementById("volunteerForm");
 
 document.body.classList.add("tabs-enabled");
 
@@ -102,6 +103,51 @@ suggestionForm?.addEventListener("submit", (event) => {
     content,
     "",
     "謝謝。"
+  ].join("\n");
+
+  const mailto = [
+    "mailto:boaipta@gmail.com",
+    `?subject=${encodeURIComponent(subject)}`,
+    `&body=${encodeURIComponent(body)}`
+  ].join("");
+
+  window.location.href = mailto;
+});
+
+volunteerForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const identity = document.getElementById("volunteerIdentity")?.value || "未填寫";
+  const name = document.getElementById("volunteerName")?.value.trim() || "";
+  const contact = document.getElementById("volunteerContact")?.value.trim() || "";
+  const student = document.getElementById("volunteerStudent")?.value.trim() || "未填寫";
+  const selectedRoles = Array.from(document.querySelectorAll('input[name="volunteerRole"]:checked'))
+    .map((item) => item.value);
+
+  if (!name) {
+    document.getElementById("volunteerName")?.focus();
+    return;
+  }
+
+  if (!contact) {
+    document.getElementById("volunteerContact")?.focus();
+    return;
+  }
+
+  const roles = selectedRoles.length ? selectedRoles.join("、") : "尚未選擇，請志工團協助聯絡說明";
+  const subject = `博愛國小115學年志工意願：${name}`;
+  const body = [
+    "博愛國小家長會您好：",
+    "",
+    "我想了解或加入115學年愛心家長志工，以下是我的意願資料。",
+    "",
+    `身分：${identity}`,
+    `姓名：${name}`,
+    `聯絡方式：${contact}`,
+    `學生資訊：${student}`,
+    `想參加的組別：${roles}`,
+    "",
+    "請志工團或家長會窗口再與我聯絡，謝謝。"
   ].join("\n");
 
   const mailto = [

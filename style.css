@@ -299,7 +299,7 @@ textarea {
 
 .tab-list {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 6px;
   padding: 8px;
   border: 1px solid rgba(217, 227, 220, 0.86);
@@ -341,7 +341,8 @@ textarea {
 
 .tabs-enabled .finance-section.active-panel,
 .tabs-enabled .dashboard-section.active-panel,
-.tabs-enabled .regulations-section.active-panel {
+.tabs-enabled .regulations-section.active-panel,
+.tabs-enabled .volunteer-section.active-panel {
   display: block;
 }
 
@@ -412,6 +413,7 @@ textarea {
 .audit-section,
 .parent-section,
 .structure-section,
+.volunteer-section,
 .governance,
 .records-section,
 .interaction-section {
@@ -619,6 +621,242 @@ textarea {
   margin: 8px 0 0;
   font-size: 14px;
   line-height: 1.65;
+}
+
+.volunteer-section {
+  display: grid;
+  gap: 28px;
+  width: 100%;
+  padding-right: max(18px, calc((100% - 1180px) / 2));
+  padding-left: max(18px, calc((100% - 1180px) / 2));
+  background:
+    linear-gradient(135deg, rgba(40, 115, 84, 0.08), rgba(255, 250, 240, 0.96)),
+    #fffdf8;
+}
+
+.volunteer-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: clamp(22px, 5vw, 58px);
+  align-items: center;
+}
+
+.volunteer-hero h2,
+.volunteer-form h2 {
+  margin: 8px 0 14px;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.18;
+}
+
+.volunteer-hero p,
+.form-intro p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.volunteer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.urgent-card {
+  display: grid;
+  gap: 14px;
+  padding: 26px;
+  border: 1px solid rgba(181, 116, 35, 0.32);
+  border-radius: 8px;
+  background:
+    linear-gradient(150deg, rgba(255, 250, 240, 0.96), rgba(231, 242, 236, 0.94)),
+    var(--paper);
+  box-shadow: var(--shadow-strong);
+}
+
+.urgent-card span,
+.role-card span {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #fff;
+  background: var(--gold);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.urgent-card strong {
+  color: var(--green-dark);
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.urgent-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.volunteer-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.volunteer-strip article {
+  display: grid;
+  gap: 6px;
+  padding: 20px;
+  border-right: 1px solid var(--line);
+}
+
+.volunteer-strip article:last-child {
+  border-right: 0;
+}
+
+.volunteer-strip span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.volunteer-strip strong {
+  color: var(--green-dark);
+  font-size: 20px;
+}
+
+.volunteer-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+  gap: 22px;
+  align-items: start;
+}
+
+.compact-head {
+  margin-bottom: 18px;
+}
+
+.role-catalog {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.role-card {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 190px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.role-card.highlight {
+  border-color: rgba(181, 86, 86, 0.36);
+  background: linear-gradient(150deg, rgba(255, 245, 240, 0.98), rgba(255, 255, 255, 0.96));
+}
+
+.role-card.highlight span {
+  background: var(--rose);
+}
+
+.role-card h3,
+.join-panel h3 {
+  margin: 0;
+  color: var(--green-dark);
+}
+
+.role-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.join-panel {
+  position: sticky;
+  top: 148px;
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--teal);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.join-panel ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+  color: #34463b;
+  line-height: 1.65;
+}
+
+.join-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.volunteer-form {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 4vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.volunteer-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.volunteer-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.volunteer-options legend {
+  padding: 0 8px;
+  color: var(--green-dark);
+  font-weight: 900;
+}
+
+.volunteer-options label {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--soft-green);
+  color: #34463b;
+  font-size: 15px;
+}
+
+.volunteer-options input {
+  width: auto;
+  accent-color: var(--green);
 }
 
 .update-matrix {
@@ -1037,6 +1275,7 @@ textarea:focus {
   }
 
   .status-strip,
+  .volunteer-strip,
   .audit-grid,
   .question-grid,
   .dashboard-grid,
@@ -1052,8 +1291,20 @@ textarea:focus {
   .two-column,
   .finance-layout,
   .bylaw-layout,
+  .volunteer-layout,
+  .volunteer-hero,
   .participate-section {
     grid-template-columns: 1fr;
+  }
+
+  .role-catalog,
+  .volunteer-form-grid,
+  .volunteer-options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .join-panel {
+    position: static;
   }
 
   .photo-wall {
@@ -1108,6 +1359,7 @@ textarea:focus {
   }
 
   .status-strip,
+  .volunteer-strip,
   .audit-grid,
   .question-grid,
   .dashboard-grid,
@@ -1118,6 +1370,21 @@ textarea:focus {
   .record-list,
   .timeline {
     grid-template-columns: 1fr;
+  }
+
+  .role-catalog,
+  .volunteer-form-grid,
+  .volunteer-options {
+    grid-template-columns: 1fr;
+  }
+
+  .volunteer-strip article {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .volunteer-strip article:last-child {
+    border-bottom: 0;
   }
 
   .photo-wall,
