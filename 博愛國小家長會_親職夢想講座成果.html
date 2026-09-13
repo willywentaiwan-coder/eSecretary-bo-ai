@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="臺北市信義區博愛國小家長會 2023 至 2025 年親職、教育與夢想講座活動回顧。">
+  <meta name="theme-color" content="#2f6fed">
+  <title>陪小大人，走向大大的世界｜博愛國小家長會</title>
+  <style>
+    :root{
+      --navy:#17345b;--blue:#2f6fed;--blue-dark:#2257bd;--sky:#dceaff;
+      --yellow:#ffd85a;--coral:#ff7865;--mint:#8bd5c7;--cream:#fff8eb;
+      --paper:#fffefb;--ink:#15243a;--muted:#5f6e82;--line:#d8e0e8;
+      --shadow:0 18px 50px rgba(23,52,91,.12);--radius:26px
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:17px;line-height:1.72;text-rendering:optimizeLegibility}
+    a{color:inherit;text-underline-offset:.2em}
+    button{font:inherit}
+    h1,h2,h3,p{margin-top:0}
+    svg{display:block;max-width:100%}
+    .wrap{width:min(1160px,calc(100% - 2.5rem));margin-inline:auto}
+    .skip{position:fixed;left:1rem;top:1rem;z-index:100;padding:.7rem 1rem;color:#fff;background:var(--navy);transform:translateY(-160%)}
+    .skip:focus{transform:translateY(0)}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--yellow);outline-offset:4px;border-radius:8px}
+
+    .site-header{position:absolute;inset:0 0 auto;z-index:20}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:1.4rem;border-bottom:1px solid rgba(23,52,91,.16)}
+    .brand{display:grid;gap:.08rem;padding-left:.85rem;border-left:5px solid var(--blue);text-decoration:none;line-height:1.16}
+    .brand strong{color:var(--navy);font-size:1rem;letter-spacing:.04em}
+    .brand span{color:var(--muted);font-size:.62rem;font-weight:800;letter-spacing:.13em}
+    nav{display:flex;align-items:center;gap:1.35rem}
+    nav a{color:var(--navy);font-size:.83rem;font-weight:800;text-decoration:none}
+    nav a:hover{color:var(--blue)}
+    .print{padding:.58rem .9rem;color:var(--navy);background:rgba(255,255,255,.55);border:1px solid var(--navy);border-radius:999px;font-size:.76rem;font-weight:850;cursor:pointer}
+
+    .hero{position:relative;min-height:820px;display:grid;align-items:center;overflow:hidden;background:var(--cream)}
+    .hero:before{position:absolute;inset:0 0 0 auto;width:43%;content:"";background:var(--sky)}
+    .hero:after{position:absolute;left:0;right:0;bottom:0;height:12px;content:"";background:linear-gradient(90deg,var(--blue) 0 42%,var(--yellow) 42% 70%,var(--coral) 70%)}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:clamp(2.5rem,6vw,6rem);padding:9rem 0 5rem}
+    .eyebrow{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;color:var(--blue-dark);font-size:.76rem;font-weight:900;letter-spacing:.1em}
+    .eyebrow:before{width:1.8rem;height:4px;content:"";background:var(--yellow);border:1px solid var(--navy)}
+    h1{max-width:670px;margin-bottom:1.45rem;color:var(--navy);font-size:clamp(3.35rem,5.3vw,5.2rem);font-weight:950;letter-spacing:-.06em;line-height:1.06}
+    h1 em{display:block;color:var(--blue);font-size:.8em;font-style:normal;white-space:nowrap}
+    .hero-lead{max-width:610px;margin-bottom:1.8rem;color:#4f5f74;font-size:clamp(1.02rem,1.5vw,1.16rem)}
+    .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2.4rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:50px;padding:.68rem 1.2rem;border:2px solid var(--navy);border-radius:999px;font-size:.9rem;font-weight:900;text-decoration:none;transition:transform .18s,box-shadow .18s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(23,52,91,.12)}
+    .btn-primary{color:#fff;background:var(--blue);border-color:var(--blue)}
+    .btn-light{color:var(--navy);background:#fff}
+    .hero-stats{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid rgba(23,52,91,.22)}
+    .hero-stat{min-width:8.5rem;padding:1rem 1.2rem 0 0}
+    .hero-stat+.hero-stat{padding-left:1.2rem;border-left:1px solid rgba(23,52,91,.22)}
+    .hero-stat strong{display:block;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:1.8rem;line-height:1}
+    .hero-stat span{color:var(--muted);font-size:.7rem;font-weight:800}
+
+    .hero-visual{position:relative}
+    .hero-frame{position:relative;padding:1rem;background:#fff;border:2px solid var(--navy);border-radius:36px 36px 8px 36px;box-shadow:14px 16px 0 var(--yellow)}
+    .hero-frame:before{position:absolute;left:-1.1rem;top:3.4rem;width:2.3rem;height:2.3rem;content:"";background:var(--coral);border:2px solid var(--navy);border-radius:50%}
+    .hero-image{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:22px}
+    .hero-caption{display:flex;justify-content:space-between;gap:1rem;padding:.8rem .35rem .15rem;color:var(--navy);font-size:.72rem;font-weight:850}
+    .hero-caption span:last-child{color:var(--blue)}
+
+    .section{padding:clamp(5.5rem,9vw,8.5rem) 0}
+    .section-label{margin-bottom:.65rem;color:var(--blue);font-size:.72rem;font-weight:900;letter-spacing:.14em}
+    h2{margin-bottom:0;color:var(--navy);font-size:clamp(2.35rem,4.8vw,4.4rem);font-weight:950;letter-spacing:-.05em;line-height:1.12}
+    .section-head{display:grid;grid-template-columns:1fr .8fr;gap:clamp(2rem,7vw,7rem);align-items:end;margin-bottom:clamp(3rem,6vw,5rem)}
+    .section-intro{max-width:540px;margin:0;color:var(--muted)}
+
+    .promise{background:#fff}
+    .promise-path{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0;padding:0;border-top:2px solid var(--navy);border-bottom:2px solid var(--navy);list-style:none}
+    .promise-step{position:relative;min-height:310px;padding:2rem clamp(1.3rem,3vw,2.4rem)}
+    .promise-step+.promise-step{border-left:1px solid var(--line)}
+    .step-no{display:inline-grid;place-items:center;width:44px;height:44px;margin-bottom:4rem;color:var(--navy);background:var(--yellow);border:2px solid var(--navy);border-radius:50%;font-family:Georgia,serif;font-weight:900}
+    .promise-step:nth-child(2) .step-no{background:var(--mint)}
+    .promise-step:nth-child(3) .step-no{background:var(--coral)}
+    .promise-step h3{margin-bottom:.65rem;color:var(--navy);font-size:1.35rem}
+    .promise-step p{margin:0;color:var(--muted);font-size:.92rem}
+
+    .tracks{position:relative;background:var(--navy)}
+    .tracks .section-label{color:var(--yellow)}
+    .tracks h2{color:#fff}
+    .tracks .section-intro{color:#c9d4e2}
+    .track-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:1.2rem}
+    .track{position:relative;overflow:hidden;padding:clamp(2rem,5vw,4rem);border-radius:var(--radius)}
+    .track-parent{min-height:560px;color:var(--navy);background:var(--sky)}
+    .track-dream{min-height:560px;color:var(--navy);background:var(--yellow)}
+    .track-top{display:flex;align-items:start;justify-content:space-between;gap:1rem}
+    .track-kicker{font-size:.74rem;font-weight:950;letter-spacing:.11em}
+    .track-count{font-family:Georgia,serif;font-size:clamp(4.2rem,8vw,7rem);font-weight:800;line-height:.75}
+    .track h3{max-width:500px;margin:4.8rem 0 1rem;font-size:clamp(2rem,4vw,3.6rem);line-height:1.15;letter-spacing:-.04em}
+    .track p{max-width:520px;margin-bottom:2rem;color:rgba(23,52,91,.76)}
+    .topic-list{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:auto}
+    .topic{padding:.38rem .72rem;background:rgba(255,255,255,.52);border:1px solid rgba(23,52,91,.45);border-radius:999px;font-size:.74rem;font-weight:850}
+    .track-dream .topic{background:rgba(255,255,255,.42)}
+    .track-arrow{position:absolute;right:-3rem;bottom:-4rem;width:14rem;height:14rem;color:rgba(23,52,91,.11);transform:rotate(-12deg)}
+
+    .speakers{background:var(--cream)}
+    .speaker-board{display:grid;grid-template-columns:1.12fr .88fr;gap:1.2rem}
+    .speaker-group{padding:clamp(1.7rem,4vw,3rem);background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+    .speaker-group.primary{grid-row:span 2;background:var(--blue);border-color:var(--blue);color:#fff}
+    .group-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1rem;border-bottom:1px solid currentColor}
+    .group-head span{font-size:.72rem;font-weight:900;letter-spacing:.1em;opacity:.72}
+    .group-head strong{font-family:Georgia,serif;font-size:2rem;line-height:1}
+    .speaker-list{display:grid;margin-top:1rem}
+    .speaker{display:grid;grid-template-columns:minmax(120px,.38fr) 1fr;gap:1.1rem;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.25)}
+    .speaker-group:not(.primary) .speaker{border-bottom-color:var(--line)}
+    .speaker:last-child{border-bottom:0}
+    .speaker h3{margin:0;font-size:1.25rem}
+    .speaker p{margin:0;color:rgba(255,255,255,.78);font-size:.84rem}
+    .speaker-group:not(.primary) .speaker p{color:var(--muted)}
+    .speaker-world{background:var(--mint)}
+    .speaker-health{background:#fff}
+
+    .archive{background:#fff}
+    .archive-grid{display:grid;grid-template-columns:150px 1fr;gap:clamp(1.5rem,5vw,5rem);padding:2.7rem 0;border-top:2px solid var(--navy)}
+    .year{position:sticky;top:1rem;align-self:start;margin:0;color:var(--blue);font-family:Georgia,serif;font-size:clamp(2.8rem,5vw,4.6rem);line-height:1}
+    .year small{display:block;margin-top:.65rem;color:var(--muted);font-family:inherit;font-size:.7rem;font-weight:800;letter-spacing:.06em}
+    .events{display:grid}
+    .event{display:grid;grid-template-columns:100px 1fr auto;gap:1.3rem;align-items:start;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+    .event:first-child{padding-top:0}
+    .event:last-child{border-bottom:0}
+    .event time{color:var(--navy);font-family:Georgia,serif;font-weight:900}
+    .event h3{margin-bottom:.2rem;color:var(--navy);font-size:1.02rem;line-height:1.48}
+    .event p{margin:0;color:var(--muted);font-size:.83rem}
+    .badge{display:inline-flex;align-items:center;min-height:27px;padding:.18rem .68rem;color:var(--navy);background:var(--sky);border-radius:999px;font-size:.68rem;font-weight:900;white-space:nowrap}
+    .badge.dream{background:var(--yellow)}
+    .badge.health{background:var(--mint)}
+
+    .closing{position:relative;overflow:hidden;background:var(--blue);color:#fff}
+    .closing:before{position:absolute;right:-8rem;top:-10rem;width:34rem;height:34rem;content:"";border:7rem solid rgba(255,255,255,.07);border-radius:50%}
+    .closing-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:end}
+    .closing .section-label{color:var(--yellow)}
+    .closing h2{color:#fff}
+    .closing h2 span{display:block;font-size:.82em;white-space:nowrap}
+    .closing p{max-width:620px;margin:1.5rem 0 0;color:#dce7f7}
+    .closing-note{justify-self:end;max-width:320px;padding:1.5rem;color:var(--navy);background:var(--yellow);border-radius:22px 22px 4px 22px;font-weight:850}
+    details{position:relative;z-index:2;margin-top:3rem;color:var(--ink);background:#fff;border-radius:18px;overflow:hidden}
+    summary{padding:1.1rem 1.35rem;color:var(--navy);font-weight:900;cursor:pointer}
+    .sources{padding:0 1.35rem 1.35rem;border-top:1px solid var(--line)}
+    .sources ol{margin:1rem 0 0;padding-left:1.3rem}
+    .sources li{margin:.58rem 0}
+    .sources a{color:var(--blue-dark);font-size:.86rem;overflow-wrap:anywhere}
+    footer{padding:1.8rem 0 2.5rem;color:#cad7e8;background:var(--navy);font-size:.78rem}
+    .footer-row{display:flex;justify-content:space-between;gap:1rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.18)}
+
+    @media(max-width:980px){
+      .hero{min-height:auto}.hero:before{inset:auto 0 0;width:100%;height:47%}.hero-grid{grid-template-columns:1fr;padding-top:8.5rem}.hero-visual{width:min(650px,100%)}
+      .section-head,.closing-inner{grid-template-columns:1fr}.track-layout,.speaker-board{grid-template-columns:1fr}.speaker-group.primary{grid-row:auto}.track,.track-parent,.track-dream{min-height:auto}.closing-note{justify-self:start}
+    }
+    @media(max-width:760px){
+      body{font-size:16px}.wrap{width:min(100% - 1.3rem,1160px)}.nav{min-height:68px}nav a{display:none}.brand strong{font-size:.86rem}
+      h1{font-size:clamp(3rem,14vw,4.7rem)}h1 em,.closing h2 span{white-space:normal}.hero-grid{padding-top:7.5rem}.hero:before{height:42%}.hero-frame{border-radius:24px 24px 6px 24px;box-shadow:8px 9px 0 var(--yellow)}
+      .hero-stat{min-width:6.5rem;padding-right:.8rem}.hero-stat+.hero-stat{padding-left:.8rem}
+      .promise-path{grid-template-columns:1fr}.promise-step{min-height:auto;padding:1.5rem 0;display:grid;grid-template-columns:3.5rem 1fr;gap:.2rem 1rem}.promise-step+.promise-step{border-left:0;border-top:1px solid var(--line)}.step-no{grid-row:1/3;margin:0}.promise-step h3,.promise-step p{grid-column:2}
+      .track h3{margin-top:3rem}.speaker{grid-template-columns:1fr;gap:.25rem}
+      .archive-grid{grid-template-columns:1fr;gap:1rem}.year{position:static}.event{grid-template-columns:82px 1fr}.event .badge{grid-column:2;justify-self:start}
+      .footer-row{flex-direction:column}
+    }
+    @media(max-width:470px){
+      .print{display:none}.actions{align-items:stretch}.btn{width:100%}.hero-stats{display:grid;grid-template-columns:repeat(3,1fr)}.hero-stat{min-width:0}.hero-stat strong{font-size:1.55rem}
+      .event{grid-template-columns:1fr;gap:.22rem}.event .badge{grid-column:1;margin-top:.35rem}.track{padding:1.6rem}.closing-note{font-size:.9rem}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    @media print{
+      @page{margin:13mm}body{color:#111;background:#fff;font-size:10.5pt}.site-header,.actions,.closing-note{display:none!important}
+      .hero{min-height:auto;background:#fff;border-bottom:2px solid #111}.hero:before,.hero:after{display:none}.hero-grid{display:block;padding:0 0 1rem}.hero-visual{display:none}h1{font-size:32pt}.section{padding:1.4rem 0}
+      .tracks,.closing,footer{color:#111;background:#fff}.tracks h2,.closing h2,.tracks .section-intro,.closing p{color:#111}.track-layout,.speaker-board{grid-template-columns:1fr}.track,.speaker-group{min-height:auto;color:#111!important;background:#fff!important;border:1px solid #999;break-inside:avoid}.speaker p{color:#333!important}
+      .archive-grid,.event,details{break-inside:avoid}.year{position:static}details>*{display:block!important}a{color:#111;text-decoration:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="博愛國小家長會講座回顧首頁"><strong>博愛國小家長會</strong><span>親職 × 教育 × 夢想</span></a>
+      <nav aria-label="頁面導覽">
+        <a href="#promise">家長會怎麼做</a><a href="#tracks">講座雙主線</a><a href="#speakers">精彩講師</a><a href="#archive">三年足跡</a>
+        <button class="print" type="button" onclick="window.print()">列印／存成 PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">2023—2025 講座回顧</p>
+          <h1 id="hero-title">陪小大人，<em>走向大大的世界。</em></h1>
+          <p class="hero-lead">家長會把親職方法帶給家庭，也把真實世界帶到孩子面前。從溝通、情緒、健康，到山林、法律與媒體，陪孩子更勇敢地理解自己、探索未來。</p>
+          <div class="actions"><a class="btn btn-primary" href="#speakers">認識精彩講師 <span aria-hidden="true">→</span></a><a class="btn btn-light" href="#archive">看看近三年足跡</a></div>
+          <div class="hero-stats" aria-label="近三年講座摘要">
+            <div class="hero-stat"><strong>9</strong><span>場講座紀錄</span></div>
+            <div class="hero-stat"><strong>2</strong><span>條策劃主線</span></div>
+            <div class="hero-stat"><strong>6</strong><span>個專業領域</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-frame">
+            <img class="hero-image" src="assets/hero-world-ahead.jpg" width="1448" height="1086" alt="三位背著書包的孩子從校園出發，沿路眺望山林、城市、醫療、媒體與法律等未來世界" loading="eager" decoding="async" fetchpriority="high">
+            <div class="hero-caption"><span>帶著好奇出發</span><span>一步一步，長成自己喜歡的樣子</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section promise" id="promise" aria-labelledby="promise-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="section-label">家長會的用心</p><h2 id="promise-title">好活動，從聽懂<br>家庭需要開始。</h2></div><p class="section-intro">每一場講座都不是行事曆上的一個勾。家長會從真實問題出發，邀請具實務經驗的分享者，再把可用的方法帶回家庭與校園。</p></div>
+        <ol class="promise-path">
+          <li class="promise-step"><span class="step-no">1</span><h3>先聽見問題</h3><p>手足爭執、情緒管理、3C 引導與成長健康，選題貼近每天正在發生的家庭日常。</p></li>
+          <li class="promise-step"><span class="step-no">2</span><h3>再找對講者</h3><p>從心理、醫療、教育到法律、媒體與山林，邀請真正有現場經驗的專業工作者。</p></li>
+          <li class="promise-step"><span class="step-no">3</span><h3>把方法帶回家</h3><p>活動結束後，留下能實際運用的觀點、練習與對話方式，讓陪伴更有力量。</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section tracks" id="tracks" aria-labelledby="tracks-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="section-label">兩條講座主線</p><h2 id="tracks-title">一邊支持家庭，<br>一邊打開世界。</h2></div><p class="section-intro">七場親職與教育講座，回應大人每天面對的教養課題；兩場夢想講座，讓孩子遇見課本以外的真實人生。</p></div>
+        <div class="track-layout">
+          <article class="track track-parent">
+            <div class="track-top"><span class="track-kicker">親職／教育</span><strong class="track-count">07</strong></div>
+            <h3>先讓大人有方法，孩子才能安心長大。</h3>
+            <p>從關係、情緒、健康到數位生活，替家長補上一份能理解孩子、也照顧自己的實用工具箱。</p>
+            <div class="topic-list" aria-label="親職與教育主題"><span class="topic">親子溝通</span><span class="topic">手足關係</span><span class="topic">情緒管理</span><span class="topic">成長健康</span><span class="topic">3C 引導</span><span class="topic">教養覺察</span></div>
+            <svg class="track-arrow" viewBox="0 0 200 200" aria-hidden="true"><path d="M22 153C54 77 97 126 145 49M112 48h34v35" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </article>
+          <article class="track track-dream">
+            <div class="track-top"><span class="track-kicker">夢想講座</span><strong class="track-count">02</strong></div>
+            <h3>讓孩子遇見，未來可能成為的自己。</h3>
+            <p>從山林到法律與媒體，用真實工作與生命經驗，讓孩子看見世界沒有標準答案。</p>
+            <div class="topic-list" aria-label="夢想講座主題"><span class="topic">山林體驗</span><span class="topic">法律職涯</span><span class="topic">媒體視野</span></div>
+            <svg class="track-arrow" viewBox="0 0 200 200" aria-hidden="true"><path d="M22 153C54 77 97 126 145 49M112 48h34v35" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section speakers" id="speakers" aria-labelledby="speakers-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="section-label">精彩講師</p><h2 id="speakers-title">把真正做過的人，<br>帶到孩子身邊。</h2></div><p class="section-intro">教養與夢想都沒有單一答案。不同領域的講者，讓家長與孩子從更多角度理解問題，也看見更多可能。</p></div>
+        <div class="speaker-board">
+          <section class="speaker-group primary" aria-labelledby="family-speakers"><div class="group-head"><span id="family-speakers">關係與成長</span><strong>04</strong></div><div class="speaker-list">
+            <article class="speaker"><h3>楊俐容</h3><p>芯福里情緒教育推廣協會創會理事長｜親子溝通與手足關係</p></article>
+            <article class="speaker"><h3>黃柏嘉</h3><p>心理師｜培養孩子良好的情緒管理能力</p></article>
+            <article class="speaker"><h3>張旭鎧</h3><p>兒童職能治療師｜3C 世代的正向引導與發展守護</p></article>
+            <article class="speaker"><h3>劉桂光</h3><p>老師｜從覺察、理解與支持重新思考親子關係</p></article>
+          </div></section>
+          <section class="speaker-group speaker-health" aria-labelledby="health-speakers"><div class="group-head"><span id="health-speakers">健康與發育</span><strong>02</strong></div><div class="speaker-list"><article class="speaker"><h3>黃世網 × 吳佳玫</h3><p>醫師、中醫師｜從不同專業看學童成長與健康</p></article></div></section>
+          <section class="speaker-group speaker-world" aria-labelledby="world-speakers"><div class="group-head"><span id="world-speakers">世界與職涯</span><strong>03</strong></div><div class="speaker-list">
+            <article class="speaker"><h3>連志展</h3><p>登山者、野地教育實務工作者｜帶領青少年體驗山林</p></article>
+            <article class="speaker"><h3>李慶峰 × 林清棋</h3><p>律師、編輯主筆｜用真實工作經驗打開職涯視野</p></article>
+          </div></section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section archive" id="archive" aria-labelledby="archive-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="section-label">三年活動年表</p><h2 id="archive-title">一場一場，<br>把用心留下來。</h2></div><p class="section-intro">2023 至 2025 年公開資料可確認的九場親職、教育與夢想講座；每一筆都可在頁末回到原始資料查看。</p></div>
+        <section class="archive-grid" aria-labelledby="year-2023"><h3 class="year" id="year-2023">2023<small>1 場紀錄</small></h3><div class="events">
+          <article class="event"><time datetime="2023-11-11">11 月 11 日</time><div><h3>親子溝通：如何聰明解決手足紛爭</h3><p>楊俐容老師｜芯福里情緒教育推廣協會創會理事長</p></div><span class="badge">親職</span></article>
+        </div></section>
+        <section class="archive-grid" aria-labelledby="year-2024"><h3 class="year" id="year-2024">2024<small>4 場紀錄</small></h3><div class="events">
+          <article class="event"><time datetime="2024-03-30">3 月 30 日</time><div><h3>家長會親職教育系列講座</h3><p>校內舉行；公開成果資料未載講題與講師。</p></div><span class="badge">親職</span></article>
+          <article class="event"><time datetime="2024-05-10">5 月 10 日</time><div><h3>帶領青少年體驗山林</h3><p>連志展先生｜登山者、野地教育實務工作者</p></div><span class="badge dream">夢想</span></article>
+          <article class="event"><time datetime="2024-05-18">5 月 18 日</time><div><h3>家長會親職教育系列講座</h3><p>校內舉行；公開成果資料未載講題與講師。</p></div><span class="badge">親職</span></article>
+          <article class="event"><time datetime="2024-10-19">10 月 19 日</time><div><h3>學童成長發育講座</h3><p>黃世網醫師、吳佳玫中醫師｜孩子的成長與健康</p></div><span class="badge health">健康</span></article>
+        </div></section>
+        <section class="archive-grid" aria-labelledby="year-2025"><h3 class="year" id="year-2025">2025<small>4 場紀錄</small></h3><div class="events">
+          <article class="event"><time datetime="2025-04-26">4 月 26 日</time><div><h3>我家有隻噴火龍</h3><p>黃柏嘉心理師｜培養孩子良好的情緒管理能力</p></div><span class="badge">親職</span></article>
+          <article class="event"><time datetime="2025-05-16">5 月 16 日</time><div><h3>法律與媒體職涯分享</h3><p>律師李慶峰、編輯主筆林清棋｜拓展孩子的職涯視野</p></div><span class="badge dream">夢想</span></article>
+          <article class="event"><time datetime="2025-09-27">9 月 27 日</time><div><h3>3C 世代家長的正向引導與孩子發展守護</h3><p>張旭鎧兒童職能治療師｜現代父母的數位教養課題</p></div><span class="badge">親職</span></article>
+          <article class="event"><time datetime="2025-12-20">12 月 20 日</time><div><h3>《先別急著教孩子》：破除教養迷思的關鍵練習</h3><p>劉桂光老師｜從覺察、理解與支持重新思考親子關係</p></div><span class="badge health">教育</span></article>
+        </div></section>
+      </div>
+    </section>
+
+    <section class="section closing" id="sources" aria-labelledby="closing-title">
+      <div class="wrap">
+        <div class="closing-inner"><div><p class="section-label">一起陪孩子長大</p><h2 id="closing-title">小小的腳步，<span>也能走向大大的夢想。</span></h2><p>謝謝每一位願意到場的家長、分享真實經驗的講師，以及與家長會一起讓這些相遇發生的學校夥伴。</p></div><div class="closing-note">每一次用心安排，都是替孩子多開一扇看見未來的窗。</div></div>
+        <details><summary>查看 7 筆公開資料來源</summary><div class="sources"><ol>
+          <li><a href="https://w2.baps.tp.edu.tw/ver2/179/main/Default.asp" target="_blank" rel="noopener">112年度｜楊俐容｜芯福里情緒教育推廣協會創會理事長｜親子溝通：如何聰明解決手足紛爭</a></li>
+          <li><a href="https://www.baps.tp.edu.tw/uploads/1725417965116wYyTxOHJ.pdf" target="_blank" rel="noopener">112年度｜連志展｜登山者、野地教育實務工作者｜帶領青少年體驗山林</a></li>
+          <li><a href="https://www.baps.tp.edu.tw/uploads/1725497618552NWNiip67.pdf" target="_blank" rel="noopener">113年度｜黃世網、吳佳玫｜醫師、中醫師｜學童成長發育講座</a></li>
+          <li><a href="https://www.baps.tp.edu.tw/uploads/1739755014186wQmdIbz5.pdf" target="_blank" rel="noopener">113年度｜黃柏嘉｜心理師｜我家有隻噴火龍：培養孩子良好的情緒管理能力</a></li>
+          <li><a href="https://www.baps.tp.edu.tw/uploads/1756367189019GLfupSVG.pdf" target="_blank" rel="noopener">113年度｜李慶峰、林清棋｜律師、編輯主筆｜法律與媒體職涯分享</a></li>
+          <li><a href="https://class.baps.tp.edu.tw/ver2/336/up_files/news/106%E7%8F%AD%E8%A6%AA%E6%9C%831140913.pdf" target="_blank" rel="noopener">114年度｜張旭鎧｜兒童職能治療師｜3C 世代家長的正向引導與孩子發展守護</a></li>
+          <li><a href="https://www.schoolandcollegelistings.com/TW/Taipei/1140392756016331/%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E5%8D%9A%E6%84%9B%E5%9C%8B%E5%B0%8F%E5%AD%B8%E7%94%9F%E5%AE%B6%E9%95%B7%E6%9C%83" target="_blank" rel="noopener">114年度｜劉桂光｜老師｜《先別急著教孩子》：破除教養迷思的關鍵練習</a></li>
+        </ol></div></details>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><span>臺北市信義區博愛國小家長會｜親職與夢想講座回顧</span><span>活動資料：2023—2025｜整理至 2026/09/10</span></div></footer>
+</body>
+</html>

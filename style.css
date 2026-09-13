@@ -2359,6 +2359,12 @@ dd {
     url("assets/boai-pta-hero.png") center / cover;
 }
 
+.photo-art-dream {
+  background:
+    linear-gradient(135deg, rgba(47, 111, 237, 0.72), rgba(255, 216, 90, 0.5)),
+    url("assets/boai-pta-hero.png") center / cover;
+}
+
 .photo-art-archive {
   background:
     linear-gradient(135deg, rgba(21, 27, 35, 0.72), rgba(24, 168, 191, 0.48)),
