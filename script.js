@@ -12,8 +12,6 @@ const suggestionPhone = document.getElementById("suggestionPhone");
 const suggestionLine = document.getElementById("suggestionLine");
 const volunteerForm = document.getElementById("volunteerForm");
 const volunteerQuickContact = document.getElementById("volunteerQuickContact");
-const poemButtons = document.querySelectorAll("[data-read-poem]");
-const stopReadingButton = document.querySelector(".stop-reading-button");
 const documentZoomButtons = document.querySelectorAll("[data-document-zoom]");
 const fundraisingButton = document.querySelector("[data-fundraising-url]");
 const fundraisingConfirmDialog = document.getElementById("fundraisingConfirmDialog");
@@ -114,35 +112,6 @@ filterButtons.forEach((button) => {
     });
   });
 });
-
-function speakPoem(text) {
-  if (!("speechSynthesis" in window)) return;
-
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "zh-TW";
-  utterance.rate = 0.82;
-  utterance.pitch = 1;
-  window.speechSynthesis.speak(utterance);
-}
-
-if ("speechSynthesis" in window) {
-  poemButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      speakPoem(button.dataset.readPoem || "");
-    });
-  });
-
-  stopReadingButton?.addEventListener("click", () => {
-    window.speechSynthesis.cancel();
-  });
-} else {
-  poemButtons.forEach((button) => {
-    button.disabled = true;
-    button.textContent = "無法朗讀";
-  });
-  if (stopReadingButton) stopReadingButton.disabled = true;
-}
 
 let documentFontSize = 16;
 

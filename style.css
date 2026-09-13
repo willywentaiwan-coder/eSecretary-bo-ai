@@ -1500,6 +1500,81 @@ textarea {
   gap: 16px;
 }
 
+.course-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.course-card {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  max-width: 760px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--red);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.course-card span {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--green-dark);
+  background: var(--soft-green);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.course-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.16;
+}
+
+.course-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.course-card dl div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.course-card dt {
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.course-card dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.course-card a {
+  width: fit-content;
+  border-radius: 8px;
+  padding: 11px 16px;
+  color: #fff;
+  background: var(--teal);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.course-card a:hover,
+.course-card a:focus-visible {
+  background: var(--green-dark);
+}
+
 .poem-card {
   display: grid;
   gap: 14px;
