@@ -1,0 +1,1 @@
+window.BOAI_CHECKIN_BACKEND_URL = "";

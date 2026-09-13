@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博愛國小家長會｜現場簽到</title>
+  <meta name="description" content="博愛國小家長會現場簽到頁，輸入秘書處提供的簽到碼後自動帶入資料。">
+  <link rel="stylesheet" href="checkin.css">
+</head>
+<body>
+  <main class="app onsite-app">
+    <header class="topbar onsite-topbar">
+      <a class="back-link" href="index.html">回平台首頁</a>
+      <div>
+        <p class="eyebrow">博愛國小家長會</p>
+        <h1>現場簽到</h1>
+        <p>請輸入本次會議的 4 位簽到碼。資料確認後即完成簽到。</p>
+      </div>
+    </header>
+
+    <nav class="mode-switch" aria-label="介面切換">
+      <a class="mode-link active" href="checkin.html" aria-current="page">現場簽到</a>
+    </nav>
+
+    <section class="onsite-shell">
+      <section class="panel meeting-strip" aria-label="本次會議">
+        <div>
+          <p class="eyebrow">本次會議</p>
+          <h2 id="meetingTitle">家長會會議簽到</h2>
+          <p id="meetingLine">請依秘書處公告輸入簽到碼。</p>
+        </div>
+      </section>
+
+      <section class="panel signin-card">
+        <div class="section-head">
+          <div>
+            <h2>簽到資料</h2>
+            <p>先輸入自己的簽到碼。若代理出席，再輸入被代理人的簽到碼完成比對。</p>
+          </div>
+        </div>
+
+        <form id="checkinForm" class="checkin-form onsite-form">
+          <input id="meetingCode" type="hidden">
+          <label>簽到碼
+            <input id="checkinCode" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="one-time-code" placeholder="請輸入 4 位數字" required>
+          </label>
+          <p id="codeLookupStatus" class="lookup-status wide">輸入自己的 4 位簽到碼後，會自動帶入資料。</p>
+
+          <input id="backendUrl" type="hidden">
+          <input id="eventName" type="hidden">
+          <input id="eventDate" type="hidden">
+          <input id="eventPlace" type="hidden">
+          <input id="expectedCount" type="hidden">
+
+          <label>姓名
+            <input id="personName" required autocomplete="name" placeholder="請輸入姓名">
+          </label>
+          <label>身分
+            <select id="role">
+              <option>家長代表</option>
+              <option>家長委員</option>
+              <option>常務委員</option>
+              <option>校方代表</option>
+              <option>志工</option>
+              <option>來賓</option>
+            </select>
+          </label>
+          <label>班級 / 單位
+            <input id="groupName" autocomplete="organization" placeholder="例如：三年二班、總務處">
+          </label>
+          <label>聯絡電話
+            <input id="phone" inputmode="tel" autocomplete="tel" placeholder="可選填">
+          </label>
+
+          <div class="proxy-box wide">
+            <label class="checkbox-label">
+              <input id="isProxy" type="checkbox">
+              <span>代理出席</span>
+            </label>
+            <div id="proxyFields" class="proxy-fields" hidden>
+              <label>被代理人簽到碼
+                <input id="proxyCode" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" placeholder="請輸入 4 位數字">
+              </label>
+              <p id="proxyLookupStatus" class="lookup-status wide">輸入被代理人的簽到碼後，會自動帶入資料。</p>
+              <label>我代理誰
+                <input id="proxyName" autocomplete="name" placeholder="系統會自動帶入">
+              </label>
+              <label>被代理人身分
+                <select id="proxyRole">
+                  <option>家長代表</option>
+                  <option>家長委員</option>
+                  <option>常務委員</option>
+                  <option>校方代表</option>
+                  <option>志工</option>
+                  <option>來賓</option>
+                </select>
+              </label>
+              <label>被代理人班級 / 單位
+                <input id="proxyGroupName" autocomplete="organization" placeholder="例如：三年二班、總務處">
+              </label>
+            </div>
+          </div>
+
+          <label class="wide">備註
+            <input id="note" autocomplete="off" placeholder="例如：晚到、需收據">
+          </label>
+          <button id="submitBtn" type="submit" class="primary-action">簽到</button>
+        </form>
+      </section>
+    </section>
+
+    <section id="receiptPanel" class="receipt-panel" hidden aria-live="polite">
+      <p>簽到完成</p>
+      <span>已完成登記，謝謝。</span>
+    </section>
+  </main>
+
+  <script src="checkin-config.js"></script>
+  <script src="checkin.js"></script>
+</body>
+</html>
