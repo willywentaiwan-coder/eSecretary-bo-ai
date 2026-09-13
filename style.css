@@ -1312,28 +1312,6 @@ textarea {
   text-underline-offset: 5px;
 }
 
-.club-qr-card {
-  min-height: 0;
-}
-
-.club-qr-link {
-  display: grid;
-  justify-self: start;
-  place-items: center;
-  width: 138px;
-  aspect-ratio: 1;
-  margin-top: auto;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-}
-
-.club-qr-code {
-  width: 118px;
-  height: 118px;
-  object-fit: contain;
-}
-
 .club-card p,
 .club-paths p,
 .club-sources p {
@@ -1459,6 +1437,21 @@ textarea {
   color: var(--green-dark);
   font-size: 26px;
   line-height: 1.25;
+}
+
+.poem-online-link {
+  width: fit-content;
+  border-radius: 8px;
+  padding: 11px 16px;
+  color: #fff;
+  background: var(--teal);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.poem-online-link:hover,
+.poem-online-link:focus-visible {
+  background: var(--green-dark);
 }
 
 .poem-toolbar {
